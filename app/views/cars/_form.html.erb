@@ -1,0 +1,136 @@
+<div class="panel panel-default">
+	<div class="panel-heading">
+		Share your awesome ride
+	</div>
+	<div class="panel-body">
+		<div class="container">
+			
+			<%= form_for @car, html: {multipart: true} do |f| %>
+
+				<div class="row">
+					<div class="col-md-4 select">
+						<div class="form-group">
+							<label>Body Type</label>
+							<%= f.select :body_type, [["Sedan","Sedan"], ["Coupe","Coupe"], ["Convertible","Convertible"], ["SUV","SUV"], ["Wagon","Wagon"], ["UTE","UTE"],["Hatch","Hatch"]], id: "body_type", prompt: "Select...", class: "form-control" %>
+						</div>
+					</div>
+
+					<div class="col-md-4 select">
+						<div class="form-group">
+							<label>Brand</label>
+							<%= f.select :brand, [["Audi","Audi"], ["Alfa Romeo","Alfa Romeo"], ["BMW","BMW"], ["Mazda","Madza"], ["Toyota","Toyota"], ["Ford","Ford"], ["Holden","Holden"], ["Nissan","Nissan"],["Renault","Renault"],["Mini","Mini"],["Honda","Honda"],["Subaru","Subaru"],["VW","VW"],["Others","Others"]],prompt: "Select...", class: "form-control" %>
+						</div>
+					</div>
+
+					<div class="col-md-4 select">
+						<div class="form-group">
+							<label>Accommodate</label>
+							<%= f.select :accommodate, [["1",1], ["2",2], ["3",3], ["4",4], ["5",5], ["6+",6]], prompt: "Select...", class: "form-control" %>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-4 select">
+						<div class="form-group">
+							<label>Transmission</label>
+							<%= f.select :transmission, [["Auto","Auto"], ["Manual","Manual"]], prompt: "Select...", class: "form-control" %>
+						</div>
+					</div>
+
+					<div class="col-md-4 select">
+						<div class="form-group">
+							<label>Drive Type</label>
+							<%= f.select :drive_type, [["FWD","FWD"], ["RWD","RWD"], ["AWD","AWD"]], prompt: "Select...", class: "form-control" %>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="form-group">
+						<label>Listing name</label>
+						<%= f.text_field :listing_name, placeholder: "i.e. MY2016 1.5L 4cyl", class: "form-control" %>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="form-group">
+						<label>Summary</label>
+						<%= f.text_area :summary, rows: 5, placeholder: "Tell about your awesome car", class: "form-control" %>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="form-group">
+						<label>Address</label>
+						<%= f.text_field :address, placeholder: "What is your address?", class: "form-control" %>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-4">
+						<div class="form-group">
+							<%= f.check_box :is_satnav %> Satnav
+						</div>
+						<div class="form-group">
+							<%= f.check_box :is_bluetooth %> bluetooth
+						</div>
+						<div class="form-group">
+							<%= f.check_box :is_abs %> ABS
+						</div>
+					</div>
+
+					<div class="col-md-4">
+						<div class="form-group">
+							<%= f.check_box :is_usb %> USB
+						</div>
+						<div class="form-group">
+							<%= f.check_box :is_air %> Air Conditioning
+						</div>
+					</div>	
+				</div>	
+
+				<div class="row">
+					<div class="col-md-4">
+						<div class="form-group">
+							<label>Price per day</label>
+							<div class="input-group">
+								<div class="input-group-addon">$</div>
+								<%= f.text_field :price, placeholder: "eg. $100", class: "form-control" %>
+							</div>	
+						</div>
+					</div>
+				</div>
+
+
+				<div class="row">
+					<div class="col-md-4">
+						<div class="form-group">
+							<span class="btn btn-default btn-file">
+								<i class = "fa fa-cloud-upload fa-lg"></i>Upload Photos
+								<%= file_field_tag "images[]", type: :file, multiple: true %>
+							</span>	
+						</div>
+					</div>
+				</div>
+
+				<div id="photos"><% render 'photos/list' %></div>
+
+
+
+
+				<div class="row">
+					<div class="form-group">
+						<%= f.check_box :active %> Active
+					</div>
+				</div>
+
+				<div class="actions">
+					<%= f.submit "Save", class: "btn btn-primary" %>
+				</div>
+
+			<% end %>
+
+		</div>
+	</div>
+</div>
