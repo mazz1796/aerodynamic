@@ -1,6 +1,9 @@
 class Car < ActiveRecord::Base
+
   belongs_to :user
   has_many :photos
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
 
 
   validates :body_type, presence: true

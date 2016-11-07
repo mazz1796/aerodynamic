@@ -2,8 +2,6 @@ class CarsController < ApplicationController
   before_action :set_car, only:[:show, :edit, :update]
   before_action :authenticate_user!, except: [:show]
 
-
-
   def index
     @cars = current_user.cars
   end
@@ -19,6 +17,7 @@ class CarsController < ApplicationController
 
   def create
     @car = current_user.cars.build(car_params)
+
     if @car.save
 
         if params[:images]
@@ -28,33 +27,29 @@ class CarsController < ApplicationController
         end
 
         @photos = @car.photos
-
-      redirect_to edit_car_path(@car), notice: "Saved...."
+        redirect_to edit_car_path(@car), notice: "Saved...."
     else
       render :new
     end
   end
 
   def edit
-    if current_user.id = @car.user.id
-        @photos = @car.photos
+    if current_user.id == @car.user.id
+      @photos = @car.photos
     else
       redirect_to root_path, notice:"You don't have permission."
-
     end
   end
 
   def update
     if @car.update(car_params)
-
       if params[:images]
           params[:images].each do |image|
             @car.photos.create(image: image)
-          end
+        end
       end
-
+      @photos = @car.photos
       redirect_to edit_car_path(@car), notice: "Updated...."
-     
     else
       render :edit
     end
@@ -71,4 +66,6 @@ class CarsController < ApplicationController
     end
 
 end
+
+
 

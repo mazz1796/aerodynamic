@@ -58,4 +58,12 @@ Rails.application.configure do
 #     password: 'YOUR_SENDGRID_PASSWORD',
 #     authentication: 'plain'
 # }
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.sendgrid.net',
+    port: 587,
+    enable_starttls_auto: true,
+    user_name: 'aerodynamic',
+    password: '4Xo-tT7-MbZ-VMw',
+    authentication: 'plain'
+}
 end
