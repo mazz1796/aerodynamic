@@ -1,5 +1,5 @@
 class CarsController < ApplicationController
-  before_action :set_car, only:[:show, :edit, :update]
+  before_action :set_car, only: [:show, :edit, :update]
   before_action :authenticate_user!, except: [:show]
 
   def index

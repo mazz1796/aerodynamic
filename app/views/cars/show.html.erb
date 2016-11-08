@@ -60,6 +60,7 @@
 
 			<div class="col-md-4">
 				<!-- Reservation form -->	
+				<%= render 'reservations/form' %>
 			</div>
 		</div>
 
@@ -86,8 +87,11 @@
 						</ul>
 					</div>
 					<div class="col-md-6">
-						<li class="<%= 'text-line-through' if !@car.is_usb %>">SB</li>
-						<li class="<%= 'text-line-through' if !@car.is_air %>">Air Conditioning</li>
+					    <ul class="amenities">
+						  <li class="<%= 'text-line-through' if !@car.is_usb %>">USB</li>
+						  <li class="<%= 'text-line-through' if !@car.is_air %>">Air Conditioning</li>
+						</ul>
+
 					</div>
 				</div>
 			</div>

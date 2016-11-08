@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  car_id: 
+  start_date: 2016-11-07 16:51:28
+  end_date: 2016-11-07 16:51:28
+  price: 1
+  total: 1
+
+two:
+  user_id: 
+  car_id: 
+  start_date: 2016-11-07 16:51:28
+  end_date: 2016-11-07 16:51:28
+  price: 1
+  total: 1

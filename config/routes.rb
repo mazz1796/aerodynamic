@@ -13,6 +13,15 @@ Rails.application.routes.draw do
 
   resources :users, only: [:show] #user controllerのshowアクションのみということ。Resourceとはコントローラーのこと。
 
+  resources :cars do
+    resources :reservations, only: [:create]
+  end
+
+  get '/preload' => 'reservations#preload'
+  get '/preview' => 'reservations#preview'
+
+
   resources :cars
   resources :photos
+
 end
