@@ -18,5 +18,30 @@
 		<div class="description row-space-3">
 			<%= @user.description %>
 		</div>
+
+		<h4>Listings (<%= @cars.length %>)</h4><br>
+
+		<div class="row">
+			
+			<% @cars.each do |car| %>
+				<div class="col-md-4">
+					<div class="panel panel-default">
+						<div class="panel-heading preview">
+							<%= image_tag car.photos[0].image.url(:medium) %>
+						</div>
+						<div class="panel-body">
+							<%= link_to car.listing_name, car %>
+						</div>
+					</div>
+				</div>
+			<% end %>
+
+		</div>
+
+
+
+
+
+
 	</div>
 </div>

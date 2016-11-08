@@ -43,7 +43,7 @@
 								<%= @car.body_type %>
 							</div>
 							<div class="col-sm-3">
-								<%= @car.accommodate %> <%= @car.accommodate > 1? "Passanger" : "Passenger" %>
+								 <%= @car.accommodate %> <%= @car.accommodate > 1? "Passanger" : "Passenger" %> 
 							</div>
 							<div class="col-sm-3">
 								<%= @car.transmission %> 
@@ -72,22 +72,22 @@
 			</div>
 		</div>
 
-		<!-- Amenities -->
+		<!-- Amenities(Equipment) -->
 		<div class="row">
 			<div class="col-md-2">
-				<p>Amentities</p>
+				<p>Equipment</p>
 			</div>
 			<div class="col-md-10">
 				<div class="row">
 					<div class="col-md-6">
-						<ul class="amenities">
+						<ul class="equipment">
 							<li class="<%= 'text-line-through' if !@car.is_satnav %>">Satnav</li>
 							<li class="<%= 'text-line-through' if !@car.is_bluetooth %>">Bluetooth</li>
 							<li class="<%= 'text-line-through' if !@car.is_abs %>">ABS</li>
 						</ul>
 					</div>
 					<div class="col-md-6">
-					    <ul class="amenities">
+					    <ul class="equipment">
 						  <li class="<%= 'text-line-through' if !@car.is_usb %>">USB</li>
 						  <li class="<%= 'text-line-through' if !@car.is_air %>">Air Conditioning</li>
 						</ul>

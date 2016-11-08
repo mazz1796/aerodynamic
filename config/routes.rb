@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   							:registrations => 'registrations'}#need to deglare when create custom controllers on top of 'devise' controller
 
   resources :users, only: [:show] #user controllerのshowアクションのみということ。Resourceとはコントローラーのこと。
-
+  resources :cars
+  resources :photos
   resources :cars do
     resources :reservations, only: [:create]
   end
@@ -21,7 +22,7 @@ Rails.application.routes.draw do
   get '/preview' => 'reservations#preview'
 
 
-  resources :cars
-  resources :photos
+  get '/your_bookings' => 'reservations#your_bookings'
+  get '/your_reservations' => 'reservations#your_reservations'
 
 end

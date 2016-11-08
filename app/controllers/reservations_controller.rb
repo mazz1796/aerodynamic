@@ -27,6 +27,15 @@ class ReservationsController < ApplicationController
 		redirect_to @reservation.car, notice: "Your reservation has been created..."
 	end
 
+	def your_bookings
+		@bookings = current_user.reservations
+	end
+
+
+	def your_reservations
+		@cars = current_user.cars
+	end
+
 	private
 
 		def is_conflict(start_date, end_date)
