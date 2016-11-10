@@ -25,6 +25,7 @@
 						<%= f.text_field :price_lteq, placeholder: "Max Price", class: "form-control" %>
 					</div>
 				</div>
+				<hr>
 
 				<div class="row">
 					<div class="col-md-4">
@@ -83,6 +84,7 @@
 				<hr>
 
 				<div class="row">
+
 					<div class="col-md-4">
 						<%= check_box_tag "q[drive_type_eq_any][]", "FWD" %> FWD
 					</div>
@@ -122,12 +124,29 @@
 						<%= check_box_tag "q[is_air_eq]", true %> Air Con
 					</div>
 				</div>
-
+				<hr>
 				<div class="row">
 					<%= f.submit "Search", class: "btn btn-primary" %>
 				</div>
 
 			<% end %>
+			<hr>
+			<div class="row">
+				<% @arrCars.each do |car| %>
+		
+					<div class="col-md-4">
+						<div class="panel panel-default">
+							<div class="panel-heading preview">
+							<%= image_tag car.photos[0].image.url(:medium) if car.photos.length > 0 %>
+							</div>
+							<div class="panel-body">
+							<%= link_to car.listing_name, car %>
+							</div>
+						</div>
+					</div>
+
+				<% end %>
+			</div>
 		</div>
 
 	</div>
