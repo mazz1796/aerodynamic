@@ -28,54 +28,98 @@
 
 				<div class="row">
 					<div class="col-md-4">
-						<%= check_box_tag "q[room_type_eq_any][]", "Entire" %> Entire Room
+						<%= check_box_tag "q[brand_eq_any][]", "Alfa Romeo" %> Afla Romeo
 					</div>
 					<div class="col-md-4">
-						<%= check_box_tag "q[room_type_eq_any][]", "Private" %> Private Room
+						<%= check_box_tag "q[brand_eq_any][]", "Audi" %> Audi
 					</div>
 					<div class="col-md-4">
-						<%= check_box_tag "q[room_type_eq_any][]", "Shared" %> Shared Room
+						<%= check_box_tag "q[brand_eq_any][]", "BMW" %> BMW
+					</div>
+					<div class="col-md-4">
+						<%= check_box_tag "q[brand_eq_any][]", "Mazda" %> Mazda
+					</div>
+					<div class="col-md-4">
+						<%= check_box_tag "q[brand_eq_any][]", "Toyota" %> Toyota
+					</div>
+					<div class="col-md-4">
+						<%= check_box_tag "q[brand_eq_any][]", "Forn" %> Ford
+					</div>
+					<div class="col-md-4">
+						<%= check_box_tag "q[brand_eq_any][]", "Holden" %> Holden
+					</div>
+					<div class="col-md-4">
+						<%= check_box_tag "q[brand_eq_any][]", "Nissan" %> Nissan
+					</div>
+					<div class="col-md-4">
+						<%= check_box_tag "q[brand_eq_any][]", "Renault" %> Renault
+					</div>
+					<div class="col-md-4">
+						<%= check_box_tag "q[brand_eq_any][]", "Mini" %> Mini
+					</div>
+					<div class="col-md-4">
+						<%= check_box_tag "q[brand_eq_any][]", "Honda" %> Honda
+					</div>
+					<div class="col-md-4">
+						<%= check_box_tag "q[brand_eq_any][]", "Subaru" %> Subaru
+					</div>
+					<div class="col-md-4">
+						<%= check_box_tag "q[brand_eq_any][]", "VW" %> VW
+					</div>
+					<div class="col-md-4">
+						<%= check_box_tag "q[brand_eq_any][]", "Others" %> Others
 					</div>
 				</div>
+				<hr>
+				
+				<div class="row">
+					<div class ="col-md-6">
+					    <%= check_box_tag "q[transmission_eq_any][]", "Automatic" %> Automatic
+					</div>
+					<div class ="col-md-6">
+					    <%= check_box_tag "q[transmission_eq_any][]", "Manual" %> Manual
+					</div>
+				</div>
+				<hr>
 
 				<div class="row">
 					<div class="col-md-4">
+						<%= check_box_tag "q[drive_type_eq_any][]", "FWD" %> FWD
+					</div>
+					<div class="col-md-4">
+						<%= check_box_tag "q[drive_type_eq_any][]", "RWD" %> RWD
+					</div>
+					<div class="col-md-4">
+						<%= check_box_tag "q[drive_type_eq_any][]", "AFW" %> AWD
+					</div>
+
+				</div>
+				<hr>
+
+				<div class="row">
+					<div class="col-md-12">
 						<div class="form-group">
 							<label>Accommodate</label>
 							<%= f.select :accommodate_gteq, [["1",1], ["2",2], ["3",3], ["4",4], ["5",5], ["6+",6]], prompt: "Select...", class: "form-control" %>
 						</div>
 					</div>
-
-					<div class="col-md-4">
-						<div class="form-group">
-							<label>Bedrooms</label>
-							<%= f.select :accommodate_gteq, [["1",1], ["2",2], ["3",3], ["4+",4]], prompt: "Select...", class: "form-control" %>
-						</div>
-					</div>
-
-					<div class="col-md-4">
-						<div class="form-group">
-							<label>Bathrooms</label>
-							<%= f.select :accommodate_gteq, [["1",1], ["2",2], ["3",3], ["4+",4]], prompt: "Select...", class: "form-control" %>
-						</div>
-					</div>
-				</div>
+                </div>
 
 				<div class="row">
 					<div class="col-md-4">
-						<%= check_box_tag "q[is_tv_eq]", true %> TV
+						<%= check_box_tag "q[is_satnav_eq]", true %> TV
 					</div>
 					<div class="col-md-4">
-						<%= check_box_tag "q[is_kitchen_eq]", true %> Kitchen
+						<%= check_box_tag "q[is_bluetooth_eq]", true %> Bluetooth
 					</div>
 					<div class="col-md-4">
-						<%= check_box_tag "q[is_internet_eq]", true %> Internet
+						<%= check_box_tag "q[is_abs_eq]", true %> ABS
 					</div>
 					<div class="col-md-4">
-						<%= check_box_tag "q[is_heating_eq]", true %> Heating
+						<%= check_box_tag "q[is_usb_eq]", true %> USB
 					</div>
 					<div class="col-md-4">
-						<%= check_box_tag "q[is_air_eq]", true %> Air Conditioning
+						<%= check_box_tag "q[is_air_eq]", true %> Air Con
 					</div>
 				</div>
 

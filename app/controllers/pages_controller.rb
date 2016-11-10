@@ -4,5 +4,5 @@ class PagesController < ApplicationController
   end
 
   def serch
-  end
+  end 
 end
