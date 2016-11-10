@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-  	@cars = Car.all
+  	@cars = Car.limit(3)
   end
 
   def search
