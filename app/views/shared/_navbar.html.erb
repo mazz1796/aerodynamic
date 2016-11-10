@@ -38,10 +38,14 @@
             <%  end %>
 
             <li>
-              <a href="#"><i class="fa fa-envelope-o"></i> Messages</a>
+              <%= link_to conversations_path do %>
+               <i class="fa fa-envelope-o"></i> Messages
+              <% end %>
             </li>
             <li>
-              <a href="#"><i class="fa fa-car"></i> Become a Lender</a>
+               <%= link_to new_car_path do %>
+                <i class="fa fa-home fa-lg"></i> Become a lender
+              <% end %>
             </li>
           </ul>
 

@@ -2,13 +2,20 @@
 	<div class="col-md-3">
 		<div class="center">
 			<%= image_tag avatar_url(@user), class: "avatar-full" %>
+		
+		   <% if current_user != @user %>
+			 <div class="row-space-2">
+			  <%= link_to "Send Message", conversations_path(sender_id: current_user.id, recipient_id: @user.id), method: 'post', class: "btn btn-primary wide" %>
+			  </div>
+		   <% end %>
+		
 		</div>
 		<div class="panel panel-default">
 			<div class="panel-heading">Verification</div>	
-			<div class="panel-body">
+			  <div class="panel-body">
 				Email Address<br>
 				Phone Number
-			</div>
+			  </div>
 		</div>
 	</div>
 
@@ -38,6 +45,26 @@
 
 		</div>
 
+		<h4>Reviews</h4><br>
+
+		<% @cars.each do |car| %>
+			<% if !car.reviews.blank? %>
+
+				<% car.reviews.each do |review| %>
+					<div class="row">
+						<div class="col-md-2 text-center">
+							<%= image_tag avatar_url(review.user), class: "img-circle avatar-medium" %><br>
+							<%= review.user.fullname %>
+						</div>
+						<div class="col-md-10">
+							<%= link_to car.listing_name, car %><br>
+							<%= review.comment %><br>
+							<%= review.created_at.strftime("%v") %>
+						</div>
+					</div>
+				<% end %>
+
+			<% end %>
 
 
 
