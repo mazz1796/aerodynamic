@@ -26,7 +26,7 @@ Rails.application.routes.draw do
     resources :reviews, only: [:create, :destroy]
   end
   
-  get '/preload' => 'reservations#preload'
+  get '/preload' => 'reservations#preload'  # get 'パス' => 'コントローラー名#アクション'
   get '/preview' => 'reservations#preview'
 
 
